@@ -26,16 +26,20 @@ public class EmployeeController {
 	}
 	
 	public void showEmployee() {
-		Map<Integer, EmployeeModel> db_data = em.getData();
-		// instead of creating variable we can directly access data
-		// for example:
-		// for(Map.Entry<Integer, EmployeeModel> data: em.getData().entrySet()) {}
-		for(Map.Entry<Integer, EmployeeModel> data: db_data.entrySet()) {
-			System.out.println("Employee No: " + data.getValue().getEmpNo());
-			System.out.println("Full Name: " + data.getValue().getFullName());
-			System.out.println("Email: " + data.getValue().getEmail());
-			System.out.println("Designation: " + data.getValue().getDesignation());
-			System.out.println("Department: " + data.getValue().getDepartment());
+		try {
+			Map<Integer, EmployeeModel> db_data = em.getData();
+			// instead of creating variable we can directly access data
+			// for example:
+			// for(Map.Entry<Integer, EmployeeModel> data: em.getData().entrySet()) {}
+			for(Map.Entry<Integer, EmployeeModel> data: db_data.entrySet()) {
+				System.out.println("Employee No: " + data.getValue().getEmpNo());
+				System.out.println("Full Name: " + data.getValue().getFullName());
+				System.out.println("Email: " + data.getValue().getEmail());
+				System.out.println("Designation: " + data.getValue().getDesignation());
+				System.out.println("Department: " + data.getValue().getDepartment());
+			}
+		} catch (Exception e) {
+			System.out.println("Data not found!!");
 		}
 	}
 }
