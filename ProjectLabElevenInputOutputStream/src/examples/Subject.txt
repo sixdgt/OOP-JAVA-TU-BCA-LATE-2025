@@ -1,0 +1,6 @@
+Modules of TU BCA Third Semester
+1. OOP in Java
+2. Data Structure and Algorithm
+3. System Analysis and Design
+4. Probability and Statistics
+5. Web Technology
